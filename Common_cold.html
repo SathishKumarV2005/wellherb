@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Common cold- Health Information</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f0f4f8;
+            color: #2d3748;
+            line-height: 1.6;
+        }
+
+        .header {
+            background-color: #2f855a;
+            color: white;
+            padding: 1rem;
+            position: relative;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .back-button {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: #ffffff33;
+            border: none;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .back-button:hover {
+            background-color: #ffffff55;
+        }
+
+        .date-display {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 0.9rem;
+        }
+
+        .title {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        .main-content {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 20px;
+        }
+
+        .container {
+            background-color: white;
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .description {
+            text-align: justify;
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            color: #2f855a;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            border-bottom: 2px solid #2f855a;
+            padding-bottom: 0.5rem;
+        }
+
+        ul {
+            list-style-position: inside;
+            padding-left: 1rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #2f855a;
+            font-weight: bold;
+        }
+
+        .symptoms-container {
+            background-color: #f0fff4;
+        }
+
+        .herbs-container {
+            background-color: #e6ffed;
+        }
+
+        .alert-box {
+            background-color: #fff5f5;
+            border-left: 4px solid #e53e3e;
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0 5px 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <button class="back-button" onclick="history.back()">← Back</button>
+        <h1 class="title">Common cold</h1>
+        <div class="date-display">
+            <script>
+                const date = new Date();
+                const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+                document.write(date.toLocaleDateString('en-US', options));
+            </script>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <div class="description">
+                The common cold is one of the oldest known illnesses, with records dating back to ancient Egyptian, Greek, and Chinese civilizations. The term "cold" originated from the belief that exposure to cold weather caused the illness. Over time, scientific advancements identified viruses as the primary cause of the common cold, with rhinoviruses being the most common culprit. Despite its mild nature, the common cold remains one of the most widespread infectious diseases affecting people worldwide.The common cold can affect people of all ages, but some groups are more vulnerable. Infants and young children are highly susceptible due to their developing immune systems and frequent exposure in schools and daycare centers. Elderly individuals are at higher risk due to weakened immunity and existing health conditions. People with chronic diseases, weakened immune systems, or those experiencing high stress levels are also more prone to frequent colds. Cold weather and seasonal changes increase the likelihood of infection, particularly in crowded indoor environments.The common cold is caused by viral infections, primarily due to rhinoviruses, coronaviruses, and adenoviruses. It spreads through airborne respiratory droplets when an infected person coughs or sneezes. Direct contact with contaminated surfaces, such as doorknobs, phones, and shared objects, increases transmission. Weakened immunity due to poor diet, lack of sleep, or stress makes individuals more susceptible. Sudden weather changes and exposure to cold environments may contribute to increased cases.
+
+</div>
+        </div>
+
+        <div class="container symptoms-container">
+            <h2 class="section-title">Symptoms</h2>
+            <ol style="list-style-type: none;">
+                <li>Runny or stuffy nose due to increased mucus production.</li>
+                <li>Sneezing caused by irritation in the nasal passages.</li>
+                <li>Sore throat and mild irritation while swallowing.</li>
+                <li>Cough, either dry or mucus-filled, depending on severity.</li>
+                <li>Mild fever, especially in children.</li>
+                <li>Fatigue and weakness due to the body's immune response.</li>
+                <li>Headache and mild body aches.</li>
+                <li>Watery eyes and slight pressure in the sinuses.</li>
+              </ol>
+            
+        </div>
+
+        <div class="container herbs-container">
+            <h2 class="section-title">Herbs that Cure Common cold</h2>
+            <ol style="list-style-type: none;">
+                <li>Ginger (Zingiber officinale) – Reduces throat inflammation and relieves congestion.</li>
+                <li>Garlic (Allium sativum) – Boosts immunity and helps fight infections.</li>
+                <li>Peppermint (Mentha piperita) – Soothes the throat and clears nasal passages.</li>
+                <li>Echinacea (Echinacea purpurea) – Strengthens the immune system and reduces cold duration.</li>
+                <li>Honey and Lemon – Soothes sore throats and relieves coughing.</li>
+              </ol>
+            
+            <div class="alert-box">
+                <strong>Important Note:</strong> While these herbs may help manage asthma symptoms, they should not replace prescribed medications. Always consult with a healthcare provider before starting any herbal treatment.
+            </div>
+        </div>
+    </main>
+</body>
+</html>

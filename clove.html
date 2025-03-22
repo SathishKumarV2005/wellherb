@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clove- Herbal Information</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f5f7f2;
+            color: #2c3e2d;
+            line-height: 1.6;
+        }
+
+        .header {
+            background-color: #4a6741;
+            color: white;
+            padding: 1rem;
+            position: relative;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .back-button {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: #ffffff33;
+            border: none;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .back-button:hover {
+            background-color: #ffffff55;
+        }
+
+        .date-display {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 0.9rem;
+        }
+
+        .title {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        .main-content {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 20px;
+        }
+
+        .herb-image {
+            width: 100%;
+            max-width: 600px;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin: 2rem auto;
+            display: block;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .container {
+            background-color: white;
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .description {
+            text-align: justify;
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            color: #4a6741;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            border-bottom: 2px solid #4a6741;
+            padding-bottom: 0.5rem;
+        }
+
+        ul {
+            list-style-position: inside;
+            padding-left: 1rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        li::before {
+            content: "🌿";
+            position: absolute;
+            left: 0;
+            color: #4a6741;
+        }
+
+        .benefits-container {
+            background-color: #edf3ea;
+        }
+
+        .precautions-container {
+            background-color: #fff5f5;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <button class="back-button" onclick="history.back()">← Back</button>
+        <h1 class="title">Clove</h1>
+        <div class="date-display">
+            <script>
+                const date = new Date();
+                const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+                document.write(date.toLocaleDateString('en-US', options));
+            </script>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <img src="CLOVE.jpeg" alt="Aloe Vera Plant" class="herb-image">
+        
+        <div class="container">
+            <div class="description">
+                Clove (Syzygium aromaticum) is a dried flower bud native to the Maluku Islands in Indonesia, often called the Spice Islands. It has been used for over 2,000 years in traditional medicine, cuisine, and cultural rituals. Cloves were highly valued in ancient trade routes and were one of the most sought-after spices in Europe during the spice trade era. Known for their strong, aromatic flavor and distinctive scent, cloves are commonly used in spice blends like garam masala and pumpkin spice. Beyond their culinary applications, cloves have long been used in Ayurvedic and Chinese medicine for their medicinal properties. The spice contains a compound called eugenol, which is responsible for its antimicrobial, analgesic, and anti-inflammatory effects. Today, cloves are cultivated in tropical regions like India, Madagascar, Sri Lanka, and Tanzania.                
+            </div>
+        </div>
+
+        <div class="container benefits-container">
+            <h2 class="section-title">Benefits</h2>
+            <ul>
+                <li><b>Relieves Toothache and Oral Pain:</b> Eugenol acts as a natural anesthetic and antiseptic, providing relief from dental pain and gum infections.</li>
+                <li><b>Supports Digestion:</b> Cloves stimulate digestive enzymes, reduce bloating, and relieve indigestion.</li>
+                <li><b>Anti-Inflammatory Properties:</b> Helps reduce inflammation, making it beneficial for managing arthritis and muscle pain.</li>
+                <li><b>Boosts Immunity:</b> Rich in antioxidants, cloves strengthen the immune system and protect against oxidative stress.</li>
+                <li><b>Improves Respiratory Health:</b> Acts as an expectorant, helping to clear mucus and ease symptoms of coughs and colds.</li>
+                <li><b>Regulates Blood Sugar:</b> May help control blood sugar levels by improving insulin sensitivity.</li>
+                <li><b>Promotes Liver Health:</b> Cloves may support liver function by reducing oxidative stress.</li>
+                <li><b>Antimicrobial Action:</b> Fights bacteria, viruses, and fungi, making it useful for treating infections.</li>
+              </ul>
+              
+
+            
+        </div>
+
+        <div class="container precautions-container">
+            <h2 class="section-title">Precautions</h2>
+            <ul>
+                <li><b>Irritation and Allergies:</b> Direct application of clove oil can cause skin irritation, burns, or allergic reactions.</li>
+                <li><b>Overconsumption Risk:</b> Excessive intake can lead to toxicity, especially due to its high eugenol content.</li>
+                <li><b>Digestive Issues:</b> In some cases, consuming too many cloves may cause heartburn, stomach discomfort, or acid reflux.</li>
+                <li><b>Blood Thinning:</b> Eugenol has blood-thinning properties, which can increase the risk of bleeding, particularly for those on anticoagulant medications.</li>
+                <li><b>Pregnancy and Breastfeeding:</b> Excessive use should be avoided as it may lead to uterine contractions.</li>
+                <li><b>Kidney and Liver Issues:</b> High doses can be harmful to the kidneys and liver.</li>
+                <li><b>Drug Interactions:</b> Cloves may interfere with medications such as anticoagulants, pain relievers, and blood sugar medications.</li>
+            </ul>
+              
+        </div>
+    </main>
+</body>
+</html>

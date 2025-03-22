@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinnamon- Herbal Information</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f5f7f2;
+            color: #2c3e2d;
+            line-height: 1.6;
+        }
+
+        .header {
+            background-color: #4a6741;
+            color: white;
+            padding: 1rem;
+            position: relative;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .back-button {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: #ffffff33;
+            border: none;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .back-button:hover {
+            background-color: #ffffff55;
+        }
+
+        .date-display {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 0.9rem;
+        }
+
+        .title {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        .main-content {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 20px;
+        }
+
+        .herb-image {
+            width: 100%;
+            max-width: 600px;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin: 2rem auto;
+            display: block;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .container {
+            background-color: white;
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .description {
+            text-align: justify;
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            color: #4a6741;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            border-bottom: 2px solid #4a6741;
+            padding-bottom: 0.5rem;
+        }
+
+        ul {
+            list-style-position: inside;
+            padding-left: 1rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        li::before {
+            content: "🌿";
+            position: absolute;
+            left: 0;
+            color: #4a6741;
+        }
+
+        .benefits-container {
+            background-color: #edf3ea;
+        }
+
+        .precautions-container {
+            background-color: #fff5f5;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <button class="back-button" onclick="history.back()">← Back</button>
+        <h1 class="title">Cinnamon</h1>
+        <div class="date-display">
+            <script>
+                const date = new Date();
+                const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+                document.write(date.toLocaleDateString('en-US', options));
+            </script>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <img src="CINNAMON.jpeg" alt="Cinnamon Plant" class="herb-image">
+        
+        <div class="container">
+            <div class="description">
+                Cinnamon (Cinnamomum) is a fragrant spice derived from the inner bark of trees belonging to the Cinnamomum genus. Native to Sri Lanka, India, Indonesia, and other parts of Southeast Asia, cinnamon has been valued for thousands of years for its medicinal properties and culinary uses. The two most common types are Ceylon Cinnamon (Cinnamomum verum) and Cassia Cinnamon (Cinnamomum cassia). Ceylon cinnamon, often called “True Cinnamon,” is more expensive and has a milder, sweeter flavor, while Cassia is more commonly available and has a stronger, spicier taste. Ancient Egyptians used cinnamon in embalming, and it was a prized commodity in the spice trade. Today, it is widely used as a flavoring agent in baked goods, beverages, and savory dishes, as well as in traditional medicine for its numerous health benefits.
+
+            </div>
+        </div>
+
+        <div class="container benefits-container">
+            <h2 class="section-title">Benefits</h2>
+            <ul>
+                <li><b>Regulates Blood Sugar:</b> Helps lower blood sugar levels by improving insulin sensitivity, making it beneficial for people with type 2 diabetes.</li>
+                <li><b>Anti-Inflammatory Properties:</b> Contains antioxidants that reduce inflammation and protect against chronic diseases.</li>
+                <li><b>Heart Health:</b> May lower cholesterol levels and reduce the risk of heart disease.</li>
+                <li><b>Antimicrobial Effects:</b> Fights bacterial and fungal infections, supporting oral health and reducing bad breath.</li>
+                <li><b>Weight Management:</b> May aid in metabolism regulation and appetite control.</li>
+                <li><b>Brain Health:</b> Contains compounds that may protect brain cells, reducing the risk of neurodegenerative diseases.</li>
+                <li><b>Digestive Support:</b> Promotes healthy digestion and alleviates gastrointestinal discomfort.</li>
+                <li><b>Skin Health:</b> Used in traditional remedies for treating acne and skin infections.</li>
+            </ul>
+              
+            
+        </div>
+
+        <div class="container precautions-container">
+            <h2 class="section-title">Precautions</h2>
+            <ul>
+                <li><b>Liver Damage:</b> Cassia cinnamon contains coumarin, which can be toxic to the liver when consumed in large quantities. Ceylon cinnamon has lower coumarin levels and is safer for regular use.</li>
+                <li><b>Allergic Reactions:</b> Some people may experience skin irritation or allergic responses to cinnamon.</li>
+                <li><b>Blood Thinning:</b> Cinnamon may act as a blood thinner, so it should be avoided before surgery or if taking anticoagulant medications.</li>
+                <li><b>Hypoglycemia Risk:</b> While beneficial for blood sugar control, excessive consumption may cause dangerously low blood sugar levels.</li>
+                <li><b>Digestive Issues:</b> Overconsumption can lead to mouth sores, throat irritation, or stomach discomfort.</li>
+                <li><b>Pregnancy and Breastfeeding:</b> In large amounts, cinnamon may stimulate uterine contractions and should be avoided during pregnancy.</li>
+                <li><b>Drug Interactions:</b> May interfere with medications for diabetes, heart disease, or liver conditions.</li>
+            </ul>
+              
+            
+        </div>
+    </main>
+</body>
+</html>

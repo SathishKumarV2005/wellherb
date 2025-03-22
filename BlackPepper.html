@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Black Pepper - Herbal Information</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f5f7f2;
+            color: #2c3e2d;
+            line-height: 1.6;
+        }
+
+        .header {
+            background-color: #4a6741;
+            color: white;
+            padding: 1rem;
+            position: relative;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .back-button {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: #ffffff33;
+            border: none;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .back-button:hover {
+            background-color: #ffffff55;
+        }
+
+        .date-display {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 0.9rem;
+        }
+
+        .title {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        .main-content {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 20px;
+        }
+
+        .herb-image {
+            width: 100%;
+            max-width: 600px;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin: 2rem auto;
+            display: block;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .container {
+            background-color: white;
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .description {
+            text-align: justify;
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            color: #4a6741;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            border-bottom: 2px solid #4a6741;
+            padding-bottom: 0.5rem;
+        }
+
+        ul {
+            list-style-position: inside;
+            padding-left: 1rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        li::before {
+            content: "🌿";
+            position: absolute;
+            left: 0;
+            color: #4a6741;
+        }
+
+        .benefits-container {
+            background-color: #edf3ea;
+        }
+
+        .precautions-container {
+            background-color: #fff5f5;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <button class="back-button" onclick="history.back()">← Back</button>
+        <h1 class="title">Black Pepper</h1>
+        <div class="date-display">
+            <script>
+                const date = new Date();
+                const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+                document.write(date.toLocaleDateString('en-US', options));
+            </script>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <img src="BLACK PEPPER.jpeg" alt="  Black PepperPlant" class="herb-image">
+        
+        <div class="container">
+            <div class="description">
+                Black pepper (Piper nigrum) is a flowering vine native to the Malabar Coast of India, particularly in the state of Kerala. Often referred to as the "King of Spices," it has been a highly prized commodity for centuries and played a significant role in the spice trade. Black pepper is produced from the dried unripe fruit of the pepper plant, known as peppercorns. Historically, it was used as currency and symbolized wealth and trade power. It was also valued for its preservative and medicinal properties. Today, black pepper is cultivated in tropical regions worldwide, including Vietnam, Indonesia, and Brazil. Its pungent flavor and distinct aroma make it a staple in culinary dishes globally. Additionally, piperine, the active compound in black pepper, is responsible for its spicy taste and numerous health benefits.  
+            </div>
+        </div>
+
+        <div class="container benefits-container">
+            <h2 class="section-title">Benefits</h2>
+            <ul>
+                <li><strong>Enhances Digestion:</strong> Stimulates digestive enzymes, promoting better digestion and nutrient absorption.</li>
+                <li><strong>Boosts Metabolism:</strong> Piperine supports metabolism and may aid in weight management.</li>
+                <li><strong>Anti-Inflammatory Properties:</strong> Helps reduce inflammation and relieve joint pain.</li>
+                <li><strong>Improves Nutrient Absorption:</strong> Enhances the bioavailability of nutrients, especially curcumin from turmeric.</li>
+                <li><strong>Supports Respiratory Health:</strong> Acts as a natural decongestant, helping to clear mucus and alleviate colds and coughs.</li>
+              </ul>
+        </div>
+
+        <div class="container precautions-container">
+            <h2 class="section-title">Precautions</h2>
+            <ul>
+                <li><b>Enhances Digestion:</b> Stimulates digestive enzymes, promoting better digestion and nutrient absorption.</li>
+                <li><b>Boosts Metabolism:</b> Piperine supports metabolism and may aid in weight management.</li>
+                <li><b>Anti-Inflammatory Properties:</b> Helps reduce inflammation and relieve joint pain.</li>
+                <li><b>Improves Nutrient Absorption:</b> Enhances the bioavailability of nutrients, especially curcumin from turmeric.</li>
+                <li><b>Supports Respiratory Health:</b> Acts as a natural decongestant, helping to clear mucus and alleviate colds and coughs.</li>
+              </ul>
+        </div>
+    </main>
+</body>
+</html>

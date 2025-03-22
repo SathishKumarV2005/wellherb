@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basil- Herbal Information</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f5f7f2;
+            color: #2c3e2d;
+            line-height: 1.6;
+        }
+
+        .header {
+            background-color: #4a6741;
+            color: white;
+            padding: 1rem;
+            position: relative;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .back-button {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: #ffffff33;
+            border: none;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .back-button:hover {
+            background-color: #ffffff55;
+        }
+
+        .date-display {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 0.9rem;
+        }
+
+        .title {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        .main-content {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 20px;
+        }
+
+        .herb-image {
+            width: 100%;
+            max-width: 600px;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin: 2rem auto;
+            display: block;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .container {
+            background-color: white;
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .description {
+            text-align: justify;
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            color: #4a6741;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            border-bottom: 2px solid #4a6741;
+            padding-bottom: 0.5rem;
+        }
+
+        ul {
+            list-style-position: inside;
+            padding-left: 1rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        li::before {
+            content: "🌿";
+            position: absolute;
+            left: 0;
+            color: #4a6741;
+        }
+
+        .benefits-container {
+            background-color: #edf3ea;
+        }
+
+        .precautions-container {
+            background-color: #fff5f5;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <button class="back-button" onclick="history.back()">← Back</button>
+        <h1 class="title">Basil</h1>
+        <div class="date-display">
+            <script>
+                const date = new Date();
+                const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+                document.write(date.toLocaleDateString('en-US', options));
+            </script>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <img src="BASIL.jpeg" alt="Basil plant" class="herb-image">
+        
+        <div class="container">
+            <div class="description">
+                Basil (Ocimum basilicum) is a fragrant herb native to India and other tropical regions of Asia and Africa. It is widely cultivated across the world, especially in Mediterranean, Southeast Asian, and Italian cuisines. Revered in Ayurveda and traditional medicine, basil has numerous varieties, with Sweet Basil and Holy Basil (Tulsi) being the most well-known. Holy Basil holds a sacred place in Hindu culture and is often grown in household courtyards for its spiritual significance and medicinal properties. Basil plants thrive in warm, sunny environments and are characterized by their bright green, aromatic leaves. Beyond culinary use, basil essential oil is used in aromatherapy for its calming effects. Its antioxidant-rich leaves are also a popular ingredient in herbal teas, remedies, and skincare products.
+            </div>
+        </div>
+
+        <div class="container benefits-container">
+            <h2 class="section-title">Benefits</h2>
+            <ul>
+                <li><strong>Boosts Immunity:</strong> Contains antioxidants and essential oils that enhance immune function.</li>
+                <li><strong>Anti-Inflammatory Properties:</strong> Reduces inflammation, making it helpful for joint pain and muscle soreness.</li>
+                <li><strong>Supports Digestion:</strong> Promotes healthy digestion and relieves bloating and indigestion.</li>
+                <li><strong>Stress Relief:</strong> Acts as an adaptogen, helping the body manage stress and anxiety.</li>
+                <li><strong>Respiratory Health:</strong> Holy Basil, in particular, helps relieve symptoms of asthma, colds, and bronchitis.</li>
+                <li><strong>Antimicrobial Effects:</strong> Possesses antibacterial and antiviral properties, supporting oral and skin health.</li>
+                <li><strong>Regulates Blood Sugar:</strong> May help control blood sugar levels in diabetic individuals.</li>
+                <li><strong>Heart Health:</strong> Contains compounds that may lower blood pressure and cholesterol.</li>
+            </ul>
+        </div>
+
+        <div class="container precautions-container">
+            <h2 class="section-title">Precautions</h2>
+            <ul>
+                <li><strong>Blood Thinning:</strong> Basil has mild blood-thinning properties and may increase the risk of bleeding when combined with anticoagulant medications.</li>
+                <li><strong>Hormonal Effects:</strong> Excessive consumption of Holy Basil may interfere with hormone levels and affect fertility.</li>
+                <li><strong>Low Blood Sugar:</strong> It may further lower blood sugar levels, posing a risk for individuals with diabetes.</li>
+                <li><strong>Allergic Reactions:</strong> Some individuals may experience skin irritation or allergic reactions when using basil essential oil.</li>
+                <li><strong>Pregnancy and Breastfeeding:</strong> Excess use of basil, especially Holy Basil, is not recommended as it may affect hormone levels.</li>
+                <li><strong>Drug Interactions:</strong> Can interfere with medications for blood pressure, diabetes, and anticoagulants.</li>
+              </ul>
+        </div>
+    </main>
+</body>
+</html>

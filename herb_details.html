@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Herb Details - Well Herb</title>
+    <link rel="stylesheet" href="herb_details.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-buttons">
+            <button onclick="window.location.href='schedule.html'" class="back-btn">
+                <i class="fas fa-arrow-left"></i> Back
+            </button>
+            <button onclick="window.location.href='home.html'" class="home-btn">
+                <i class="fas fa-home"></i>
+            </button>
+        </div>
+    </nav>
+
+    <div class="herb-container">
+        <div class="herb-header">
+            <div class="herb-image">
+                <img id="herbImage" src="" alt="Herb Image">
+            </div>
+            <div class="herb-title">
+                <h1 id="herbName"></h1>
+                <p id="herbTamilName" class="tamil-name"></p>
+                <div class="herb-tags" id="herbTags">
+                    <!-- Tags will be dynamically inserted -->
+                </div>
+            </div>
+        </div>
+
+        <div class="herb-content">
+            <section class="benefits-section">
+                <h2><i class="fas fa-star"></i> Benefits</h2>
+                <ul id="benefitsList">
+                    <!-- Benefits will be dynamically inserted -->
+                </ul>
+            </section>
+
+            <section class="ingredients-section" onclick="window.location.href='ingredients.html'">
+                <h2><i class="fas fa-mortar-pestle"></i> Ingredients Required</h2>
+                <div class="ingredients-grid" id="ingredientsList">
+                    <!-- Ingredients will be dynamically inserted -->
+                </div>
+                <div class="view-more">
+                    <button class="view-details-btn">View Full Details</button>
+                </div>
+            </section>
+
+            <section class="procedure-section" onclick="window.location.href='procedure.html'">
+                <h2><i class="fas fa-list-ol"></i> Procedure to Prepare</h2>
+                <ol id="procedureList">
+                    <!-- First 2 steps will be shown here -->
+                </ol>
+                <div class="view-more">
+                    <button class="view-details-btn">View Full Procedure</button>
+                </div>
+            </section>
+
+            <section class="precautions-section" onclick="window.location.href='precautions.html'">
+                <h2><i class="fas fa-exclamation-triangle"></i> Precautions</h2>
+                <ul id="precautionsList">
+                    <!-- First 2 precautions will be shown here -->
+                </ul>
+                <div class="view-more">
+                    <button class="view-details-btn">View All Precautions</button>
+                </div>
+            </section>
+
+            <section class="where-to-buy-section" onclick="window.location.href='where_to_buy.html'">
+                <h2><i class="fas fa-shopping-cart"></i> Where to Buy</h2>
+                <div id="whereToList">
+                    <!-- First location will be shown here -->
+                </div>
+                <div class="view-more">
+                    <button class="view-details-btn">View All Locations</button>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <script src="herb_data.js"></script>
+    <script src="herb_details.js"></script>
+</body>
+</html>

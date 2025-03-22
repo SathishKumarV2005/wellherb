@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Herb Ingredients - Well Herb</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('background.webp');
+            background-size: cover;
+            background-position: center;
+            min-height: 100vh;
+        }
+        .navbar {
+            background-color: #4CAF50;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .nav-buttons {
+            display: flex;
+            gap: 10px;
+        }
+        .nav-buttons button {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            padding: 8px 15px;
+            transition: background-color 0.3s;
+        }
+        .nav-buttons button:hover {
+            background: rgba(255,255,255,0.2);
+            border-radius: 4px;
+        }
+        .current-date {
+            color: white;
+            font-size: 16px;
+            background: rgba(255,255,255,0.1);
+            padding: 8px 15px;
+            border-radius: 4px;
+        }
+        .main-container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+        .page-title {
+            color: #2e7d32;
+            font-size: 2em;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .herb-name {
+            color: #1b5e20;
+            font-size: 1.5em;
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 10px;
+            background: #e8f5e9;
+            border-radius: 8px;
+        }
+        .ingredients-list {
+            list-style: none;
+            padding: 0;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        .ingredient-item {
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #e8f5e9;
+            transition: background-color 0.2s ease;
+        }
+        .ingredient-item:last-child {
+            border-bottom: none;
+        }
+        .ingredient-item:hover {
+            background: #f0f7f0;
+        }
+        .ingredient-name {
+            color: #1b5e20;
+            font-weight: 600;
+            font-size: 1.1em;
+        }
+        .ingredient-amount {
+            color: #666;
+            background: #e8f5e9;
+            padding: 5px 15px;
+            border-radius: 15px;
+            font-size: 0.9em;
+        }
+        @media (max-width: 600px) {
+            .main-container {
+                padding: 10px;
+            }
+            .ingredient-item {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="nav-buttons">
+            <button onclick="window.location.href='home.html'">Back to Home</button>
+            <button onclick="window.location.href='procedure.html'">Go to Procedure</button>
+        </div>
+        <div class="current-date" id="current-date"></div>
+    </div>
+
+    <div class="main-container">
+        <h1 class="page-title">Ingredients</h1>
+        <div id="herb-name" class="herb-name"></div>
+        <ul class="ingredients-list" id="ingredients-list"></ul>
+    </div>
+
+    <script src="herb_data.js"></script>
+    <script>
+        function getCurrentDay() {
+            const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+            return days[new Date().getDay()];
+        }
+
+        function updateDateTime() {
+            const now = new Date();
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            document.getElementById('current-date').textContent = now.toLocaleDateString('en-US', options);
+        }
+
+        function displayIngredients() {
+            const currentDay = getCurrentDay();
+            const currentHerb = herbSchedule[currentDay];
+            
+            if (!currentHerb) return;
+
+            // Update herb name
+            document.getElementById('herb-name').textContent = currentHerb.name;
+
+            // Display ingredients
+            const ingredientsList = document.getElementById('ingredients-list');
+            ingredientsList.innerHTML = '';
+            
+            currentHerb.ingredients.forEach(ingredient => {
+                const li = document.createElement('li');
+                li.className = 'ingredient-item';
+                li.innerHTML = `
+                    <span class="ingredient-name">${ingredient.name}</span>
+                    <span class="ingredient-amount">${ingredient.amount}</span>
+                `;
+                ingredientsList.appendChild(li);
+            });
+        }
+
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', () => {
+            updateDateTime();
+            displayIngredients();
+        });
+    </script>
+</body>
+</html>

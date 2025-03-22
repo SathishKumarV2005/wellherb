@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Well Herb - Home</title>
+    <style>
+        /* General Styles */
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('background.webp');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: rgba(255, 255, 255, 0.8);
+            overflow: hidden;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 70px;
+            left: 0;
+            width: 200px;
+            background-color: azure;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+            padding-top: 10px;
+            transform: translateX(-220px);
+            transition: transform 0.5s ease, opacity 0.5s ease;
+            opacity: 0;
+            z-index: 1000;
+        }
+
+        .navbar.open {
+            transform: translateX(0);
+            opacity: 1;
+        }
+
+        .navbar a {
+            display: block;
+            padding: 15px;
+            text-decoration: none;
+            color: green;
+            font-size: 18px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .navbar a:hover {
+            background-color: rgb(4, 170, 98);
+            color: white;
+            transition: background-color 0.3s ease;
+        }
+
+        .menu-toggle {
+            background-color: rgb(4, 170, 98);
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 15px;
+        }
+
+        .menu-toggle:hover {
+            background-color: green;
+            transition: background-color 0.3s ease;
+        }
+
+        .header {
+            position: relative;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: azure;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            z-index: 1100;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+        }
+
+        .header .home_png {
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            margin-left: 30px;
+        }
+
+        .header .tagline {
+            flex: 1;
+            margin-left: 0px;
+            text-align: center;
+            color: rgb(4, 170, 98);
+            font-size: 24px;
+            font-weight: bold;
+            font-family: 'Arial', sans-serif;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .display{
+            margin-top:30px;
+            display:flex;
+        }
+        .display a{
+            text-decoration: none;
+        }
+        .A-Z{
+            margin-left: 300px;
+            width:350px;
+            height: 200px;
+            background-color: azure;
+            color: rgb(4, 170, 98);
+            border: 3px solid transparent;
+            border-radius: 15px;
+            text-align: center;
+            transition: border-color 0.5s ease;
+            text-decoration: none;
+        }
+        .A-Z h2{
+            margin-top: 25%;
+            align-items: center;
+        }
+        .A-Z:hover{
+            border-color: green;
+            cursor: pointer;
+        }
+        .schedule{
+            position: relative;
+            margin-top: 30px;
+            margin-left: 300px;
+            width:1020px;
+            height: 250px;
+            background-color: azure;
+            border: 2px solid transparent;
+            border-radius: 25px;
+            padding-top: 10px;
+        }
+        
+        .schedule:hover{
+            border: 2px solid;
+            border-color: green;
+        }
+        .schedule header{
+            position:absolute;
+            width:750px;
+            height: 50px;
+            background-color: rgb(222, 254, 241);
+            border:2px solid rgb(4, 170, 98);
+            border-radius: 15px;
+            margin-left:30px;
+            margin-top:10px;
+            display:flex;
+            gap: 50px;
+            color:rgb(4, 170, 98);
+            padding-left: 20px;
+            padding-bottom: 10px;
+            transition: transform 0.5s ease;
+
+        }
+        .schedule header:hover{
+            transform: scale(1.03);
+            cursor: pointer;
+            border: 2px solid green;
+        }
+        .schedule .location{
+            position:absolute;
+            width:185px;
+            height: 230px;
+            background-color: rgb(222, 254, 241);
+            border:2px solid rgb(4, 170, 98);
+            border-radius: 15px;
+            margin-left:820px;
+            margin-top:10px;
+            text-align: center;
+            color:rgb(4, 170, 98); 
+            transition: transform 0.5s ease;
+        }
+        .schedule .location h2{
+            margin-top: 50%;
+            align-items: center;
+        }
+        .schedule .location:hover{
+            transform: scale(1.03);
+            cursor: pointer;
+            border: 2px solid green;
+        }
+        .schedule .footer{
+            position: absolute;
+            width:800px;
+            height: 150px;
+            border: none;
+            border-radius: 15px;
+            display:flex;
+            box-shadow:none;
+            gap: 100px;
+            padding-left: 20px;
+            padding-bottom: 5px;
+            background-color: transparent;
+        }
+        .schedule .footer a{
+            text-decoration: none;
+        }
+        .schedule .footer .ingredient{
+            margin-left:10px;
+            text-align: center;
+            position:absolute;
+            width:230px;
+            height: 130px;
+            background-color: rgb(222, 254, 241);
+            border:2px solid rgb(4, 170, 98);
+            border-radius: 15px;
+            color: rgb(4, 170, 98);
+            transition: transform 0.5s ease;
+        }
+
+        .schedule .footer .ingredient h2{
+            margin-top: 25%;
+            align-items: center;
+        }
+
+        .schedule .footer .ingredient:hover{
+            transform: scale(1.03);
+            cursor: pointer;
+            border: 2px solid green;
+        }
+
+        .schedule .footer .procedure{
+            margin-left: 285px;
+            text-align: center;
+            position:absolute;
+            width:230px;
+            height: 130px;
+            background-color: rgb(222, 254, 241);
+            border:2px solid rgb(4, 170, 98);
+            border-radius: 15px;
+            color:rgb(4, 170, 98);
+            transition: transform 0.5s ease;
+        }
+
+        .schedule .footer .procedure h2{
+            margin-top: 25%;
+            align-items: center;
+        }
+
+        .schedule .footer .procedure:hover{
+            transform: scale(1.03);
+            cursor: pointer;
+            border: 2px solid green;
+        }
+
+        .schedule .footer .precaution{
+            margin-left: 545px;
+            text-align: center;
+            position:absolute;
+            width:230px;
+            height: 130px;
+            background-color: rgb(222, 254, 241);
+            border:2px solid rgb(4, 170, 98);
+            border-radius: 15px;
+            color: rgb(4, 170, 98);
+            transition: transform 0.5s ease;
+        }
+
+        .schedule .footer .precaution h2{
+            margin-top: 25%;
+            align-items: center;
+        }
+
+        .schedule .footer .precaution:hover{
+            transform: scale(1.03);
+            cursor: pointer;
+            border: 2px solid green;
+        }
+
+        .footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: azure;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .footer p {
+            margin: 0;
+            color: green;
+        }
+
+        .footer p.quote {
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="header-left">
+            <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+            <img class="home_png" src="home.png" alt="Home" onclick="goToHome()">
+        </div>
+        <div class="tagline">Healthier Tomorrow Starts Today</div>
+    </div>
+
+    <div class="navbar" id="navbar">
+        <a href="#">Home</a>
+        <a href="schedule.html">Check Schedules</a>
+        <a href="login.html">Log out</a>
+    </div>
+    <div class="display">
+        <a href="A-Z_herb.html" class="A-Z">
+                <h2>A-Z Herb Details</h2>
+        </a>
+        <a href="A-Z_diseases.html" class="A-Z">
+                <h2>A-Z Disease Details</h2>
+        </a>
+    </div>
+    <div class="schedule">
+        <a href="schedule.html">
+            <header>
+                <h2 class="date" id="currentDate"></h2>
+                <h2 id="currentDay"></h2>
+                <h2 class="name" id="currentHerb"></h2>
+            </header>
+        </a>
+        
+        <a href="where_to_buy.html">
+            <div class="location">
+                <h2>Where to Buy</h2>
+            </div>
+        </a>
+
+        <div class="footer">
+            <a href="ingredients.html" class="ingredient">
+                <h2>Ingredients</h2>
+            </a>
+            <a href="procedure.html" class="procedure">
+                <h2>Procedure</h2>
+            </a>
+            <a href="precautions.html" class="precaution">
+                <h2>Precautions</h2>
+            </a>
+        </div>
+    </div>
+    <div class="footer">
+        <p> 2024 Well Herb. All rights reserved.</p>
+        <p>Contact Us: +91-9876543210</p>
+    </div>
+
+    <script src="herb_data.js"></script>
+    <script>
+        // Get current herb data for the schedule section
+        function updateCurrentHerb() {
+            const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+            const today = new Date();
+            const currentDay = days[today.getDay()];
+            const currentHerb = herbSchedule[currentDay];
+
+            // Update the display
+            document.getElementById('currentDate').textContent = `Date: ${today.toLocaleDateString()}`;
+            document.getElementById('currentDay').textContent = `Day: ${currentDay}`;
+            document.getElementById('currentHerb').textContent = `Herb: ${currentHerb.name}`;
+        }
+
+        // Initialize when page loads
+        document.addEventListener('DOMContentLoaded', function() {
+            updateCurrentHerb();
+            
+            // Check if redirected from medication_account.html
+            if (document.referrer.includes('medication_account.html')) {
+                const now = new Date();
+                const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+                const currentDay = days[now.getDay()];
+                const currentDate = now.toLocaleDateString();
+                const currentHerb = herbSchedule[currentDay].name;
+                
+                alert(`Welcome to Well Herb!\n\nToday is ${currentDay}, ${currentDate}\nYour recommended herb for today: ${currentHerb}`);
+            }
+        });
+
+        const navbar = document.getElementById('navbar');
+        const menuToggle = document.querySelector('.menu-toggle');
+
+        function toggleMenu() {
+            navbar.classList.toggle('open');
+        }
+
+        window.addEventListener('click', function (e) {
+            if (!navbar.contains(e.target) && !menuToggle.contains(e.target)) {
+                navbar.classList.remove('open');
+            }
+        });
+
+        function goToHome() {
+            window.location.reload();
+        }
+    </script>
+</body>
+</html>

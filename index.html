@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Well Herb</title>
+    </head>
+
+    <body>
+        <div class="container">
+
+            <div class="logo">
+            <img src="well_herb logo.png" alt="image"><br>
+            </div>
+
+            <div class="login_b">
+                <button onclick="window.location.href='login.html'";>Login</button>
+            </div>
+    
+            <div class="register_b">
+                <button onclick="window.location.href='register.html';">Register</button>
+            </div>
+    
+        </body>
+         </div>
+
+
+
+</html>
+
+<style>
+     html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('background.webp');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: rgba(255, 255, 255, 0.8);
+
+        }
+
+    .logo{
+        position: absolute;
+        top: 50px;
+        left: 50%; 
+        transform: translateX(-50%);
+    }
+    img{
+        border: 1px solid green;
+        border-radius: 50%;
+    }
+
+    .container{
+        position:relative;
+        border-radius: 15px;
+        background-color: azure;
+        height: 500px;
+        width: 400px;
+        margin-top: 6%;
+        margin-left: 36%;
+        border: 2px solid transparent;
+        transition: border-color 1s ease;
+        transition: transform 0.5s ease;
+    }
+
+    .container:hover{
+        border-color: green;
+        transform: scale(1.03);
+    }
+
+    .login_b button{
+        position:absolute;
+        background-color: rgb(4, 170, 98);
+	    padding: 10px 10px;
+        bottom: 50px;
+        left: 50px; 
+        height: 50px;
+        width: 120px;
+        border-radius: 30px;
+        border:none;
+        color: azure; 
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+   .login_b button:hover{
+	background-color:azure;
+    color:cadetblue;
+    border-style: solid;
+    border-width: 2px;
+    border-color: green;
+    transition: background-color 0.5s ease;
+    }
+
+    .register_b button{
+        position:absolute;
+        background-color: rgb(4, 170, 98);
+	    padding: 10px 10px;
+        bottom: 50px;
+        right: 50px; 
+        height: 50px;
+        width: 120px;
+        border-radius: 30px;
+        border:none;
+        color: azure; 
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+   .register_b button:hover{
+	background-color:azure;
+    color:cadetblue;
+    border-style: solid;
+    border-width: 2px;
+    border-color: green;
+    transition: background-color 0.5s ease;
+    }
+</style>

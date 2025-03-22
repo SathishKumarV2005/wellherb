@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Herb Precautions - Well Herb</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('background.webp');
+            background-size: cover;
+            background-position: center;
+            min-height: 100vh;
+        }
+        .navbar {
+            background-color: #4CAF50;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .nav-buttons {
+            display: flex;
+            gap: 10px;
+        }
+        .nav-buttons button {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            padding: 8px 15px;
+            transition: background-color 0.3s;
+        }
+        .nav-buttons button:hover {
+            background: rgba(255,255,255,0.2);
+            border-radius: 4px;
+        }
+        .current-date {
+            color: white;
+            font-size: 16px;
+            background: rgba(255,255,255,0.1);
+            padding: 8px 15px;
+            border-radius: 4px;
+        }
+        .main-container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+        }
+        .page-title {
+            color: #2e7d32;
+            font-size: 2em;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .herb-name {
+            color: #1b5e20;
+            font-size: 1.5em;
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 10px;
+            background: #e8f5e9;
+            border-radius: 8px;
+        }
+        .precautions-list {
+            list-style: none;
+            padding: 0;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        .precaution-item {
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            border-bottom: 1px solid #e8f5e9;
+            transition: background-color 0.2s ease;
+            position: relative;
+            padding-left: 60px;
+        }
+        .precaution-item:last-child {
+            border-bottom: none;
+        }
+        .precaution-item:hover {
+            background: #f0f7f0;
+        }
+        .precaution-item:before {
+            content: "⚠️";
+            position: absolute;
+            left: 20px;
+            font-size: 24px;
+        }
+        .precaution-text {
+            color: #1b5e20;
+            font-size: 1.1em;
+            line-height: 1.4;
+        }
+        @media (max-width: 600px) {
+            .main-container {
+                padding: 10px;
+            }
+            .precaution-item {
+                padding-left: 50px;
+            }
+            .precaution-item:before {
+                left: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <div class="nav-buttons">
+            <button onclick="window.location.href='schedule.html'">Back to Schedule</button>
+            <button onclick="goToClickedHerbIngredients()">View Ingredients</button>
+        </div>
+        <div class="current-date" id="current-date"></div>
+    </div>
+
+    <div class="main-container">
+        <h1 class="page-title">Precautions</h1>
+        <div id="herb-name" class="herb-name"></div>
+        <ul class="precautions-list" id="precautions-list"></ul>
+    </div>
+
+    <script src="herb_data.js"></script>
+    <script>
+        function updateDateTime() {
+            const now = new Date();
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+            document.getElementById('current-date').textContent = now.toLocaleDateString('en-US', options);
+        }
+
+        function getClickedHerbDay() {
+            const params = new URLSearchParams(window.location.search);
+            return params.get('day');
+        }
+
+        function goToClickedHerbIngredients() {
+            const clickedDay = getClickedHerbDay();
+            window.location.href = `clicked_herb_ingredients.html?day=${clickedDay}`;
+        }
+
+        function displayPrecautions() {
+            const clickedDay = getClickedHerbDay();
+            if (!clickedDay) {
+                console.error('No day parameter provided');
+                return;
+            }
+
+            const herb = herbSchedule[clickedDay];
+            if (!herb) {
+                console.error('No herb data found for', clickedDay);
+                return;
+            }
+
+            // Update herb name
+            document.getElementById('herb-name').textContent = herb.name;
+
+            // Display precautions
+            const precautionsList = document.getElementById('precautions-list');
+            precautionsList.innerHTML = '';
+            
+            if (!herb.precautions || !Array.isArray(herb.precautions)) {
+                console.error('No precautions data found for', herb.name);
+                return;
+            }
+
+            herb.precautions.forEach(precaution => {
+                const li = document.createElement('li');
+                li.className = 'precaution-item';
+                li.innerHTML = `<span class="precaution-text">${precaution}</span>`;
+                precautionsList.appendChild(li);
+            });
+        }
+
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', () => {
+            updateDateTime();
+            displayPrecautions();
+        });
+    </script>
+</body>
+</html>

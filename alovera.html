@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aloe Vera - Herbal Information</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f5f7f2;
+            color: #2c3e2d;
+            line-height: 1.6;
+        }
+
+        .header {
+            background-color: #4a6741;
+            color: white;
+            padding: 1rem;
+            position: relative;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .back-button {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: #ffffff33;
+            border: none;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .back-button:hover {
+            background-color: #ffffff55;
+        }
+
+        .date-display {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 0.9rem;
+        }
+
+        .title {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        .main-content {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 20px;
+        }
+
+        .herb-image {
+            width: 100%;
+            max-width: 600px;
+            height: 400px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin: 2rem auto;
+            display: block;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .container {
+            background-color: white;
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .description {
+            text-align: justify;
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            color: #4a6741;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            border-bottom: 2px solid #4a6741;
+            padding-bottom: 0.5rem;
+        }
+
+        ul {
+            list-style-position: inside;
+            padding-left: 1rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        li::before {
+            content: "🌿";
+            position: absolute;
+            left: 0;
+            color: #4a6741;
+        }
+
+        .benefits-container {
+            background-color: #edf3ea;
+        }
+
+        .precautions-container {
+            background-color: #fff5f5;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <button class="back-button" onclick="history.back()">← Back</button>
+        <h1 class="title">Aloe Vera</h1>
+        <div class="date-display">
+            <script>
+                const date = new Date();
+                const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+                document.write(date.toLocaleDateString('en-US', options));
+            </script>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <img src="ALOE VERA.jpeg" alt="Aloe Vera Plant" class="herb-image">
+        
+        <div class="container">
+            <div class="description">
+                Aloe vera (Aloe barbadensis miller) is a succulent plant native to the Arabian Peninsula but is now cultivated in tropical and subtropical regions around the world, including India, Africa, and Central America. It has been used for thousands of years for its medicinal and skincare properties. Ancient Egyptians referred to it as the "Plant of Immortality," using it in beauty rituals and healing treatments. Aloe vera thrives in dry, arid conditions, storing water in its thick, fleshy leaves. The translucent gel within the leaves is packed with vitamins, enzymes, minerals, and antioxidants, making it a staple in herbal medicine and cosmetic industries. Its popularity has also grown in the food and beverage industry, with Aloe vera juice consumed for its digestive benefits. Due to its remarkable soothing and hydrating properties, it remains a go-to remedy for skin conditions and minor wounds.
+            </div>
+        </div>
+
+        <div class="container benefits-container">
+            <h2 class="section-title">Benefits</h2>
+            <ul>
+                <li>Skin Healing: Known for its soothing effect on sunburns, wounds, and minor cuts, promoting faster healing.</li>
+                <li>Hydration and Moisturization: Acts as a natural moisturizer, hydrating the skin without clogging pores.</li>
+                <li>Anti-Inflammatory Properties: Reduces inflammation, making it effective for treating acne, eczema, and psoriasis.</li>
+                <li>Digestive Support: Aloe vera juice can relieve constipation and aid in digestion.</li>
+                <li>Boosts Immunity: Contains antioxidants that protect the body from free radical damage.</li>
+                <li>Oral Health: Aloe vera's antimicrobial properties can improve oral hygiene and reduce gum inflammation.</li>
+                <li>Hair Care: Nourishes the scalp, reduces dandruff, and promotes hair growth.</li>
+            </ul>
+        </div>
+
+        <div class="container precautions-container">
+            <h2 class="section-title">Precautions</h2>
+            <ul>
+                <li>Allergic Reactions: Some people may experience skin irritation or redness; a patch test is recommended before use.</li>
+                <li>Laxative Effect: Aloe vera latex, found in the outer part of the leaf, acts as a strong laxative and can cause abdominal cramps or diarrhea if excess.</li>
+                <li>Pregnancy and Breastfeeding: Consumption of Aloe vera latex is not recommended during pregnancy as it may lead to uterine contractions.</li>
+                <li>Drug Interactions: May interfere with medications, especially diuretics, laxatives, and drugs for diabetes.</li>
+                <li>Kidney Issues: Prolonged use of Aloe vera latex can lead to kidney damage.</li>
+                <li>Blood Sugar Levels: It may lower blood sugar, which could be problematic for individuals on diabetes medication.</li>
+            </ul>
+        </div>
+    </main>
+</body>
+</html>

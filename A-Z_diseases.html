@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>A-Z Diseases - Well Herb</title>
+    <style>
+        /* General Styles */
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('background.webp');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: rgba(255, 255, 255, 0.8);
+            overflow: hidden;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 70px;
+            left: 0;
+            width: 200px;
+            background-color: azure;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+            padding-top: 10px;
+            transform: translateX(-220px);
+            transition: transform 0.5s ease, opacity 0.5s ease;
+            opacity: 0;
+            z-index: 1000;
+        }
+
+        .navbar.open {
+            transform: translateX(0);
+            opacity: 1;
+        }
+
+        .navbar a {
+            display: block;
+            padding: 15px;
+            text-decoration: none;
+            color: green;
+            font-size: 18px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .navbar a:hover {
+            background-color: rgb(4, 170, 98);
+            color: white;
+            transition: background-color 0.3s ease;
+        }
+
+        .menu-toggle {
+            background-color: rgb(4, 170, 98);
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-left: 15px;
+        }
+
+        .menu-toggle:hover {
+            background-color: green;
+            transition: background-color 0.3s ease;
+        }
+
+        .header {
+            position: relative;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background-color: azure;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            z-index: 1100;
+        }
+
+        .header-left {
+            display: flex;
+            align-items: center;
+        }
+
+        .header .home_png {
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            margin-left: 30px;
+        }
+
+        .tagline {
+            flex: 1;
+            text-align: center;
+            color: rgb(4, 170, 98);
+            font-size: 24px;
+            font-weight: bold;
+            margin: 0 20px;
+            font-family: 'Arial', sans-serif;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .container {
+            margin-top: 40px;
+            margin-left: 300px;
+            margin-right: 300px;
+            height: calc(100vh - 230px);
+            overflow-y: auto;
+            background-color: rgb(202, 215, 208);
+            border-radius: 10px;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .container h1 {
+            color: rgb(4, 170, 98);
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .alphabet-section {
+            margin-top: 30px;
+        }
+
+        .alphabet {
+            color: green;
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+
+        .diseases-list {
+            display: block;
+            margin-left: 20px;
+            width: 800px;
+        }
+
+        .diseases-list a {
+            display: block;
+            background-color: rgb(222, 254, 241);
+            padding: 10px 15px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            text-decoration: none;
+            color: green;
+            font-size: 18px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .diseases-list a:hover {
+            background-color: rgb(4, 170, 98);
+            color: white;
+            transform: scale(1.05);
+        }
+
+        .footer {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: azure;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .footer p {
+            margin: 0;
+            color: green;
+        }
+
+        .footer p.quote {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        /* Scroll Bar Styling */
+        .container {
+            scrollbar-width: thin;
+            scrollbar-color: green rgb(222, 254, 241);
+        }
+
+        .container::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .container::-webkit-scrollbar-thumb {
+            background-color: green;
+            border-radius: 10px;
+        }
+
+        .container::-webkit-scrollbar-track {
+            background-color: rgb(222, 254, 241);
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="header-left">
+            <button class="menu-toggle" onclick="toggleMenu()">☰</button>
+            <img class="home_png" src="home.png" alt="Home" onclick="goToHome()">
+        </div>
+        <div class="tagline">Healthier Tomorrow Starts Today</div>
+    </div>
+
+    <div class="navbar" id="navbar">
+        <a href="home.html">Home</a>
+        <a href="schedule.html">Check Schedules</a>
+        <a href="login.html">Log out</a>
+    </div>
+
+    <div class="container">
+        <h1>A-Z Diseases</h1>
+        <div class="alphabet-section">
+            <div class="alphabet">A</div>
+            <div class="diseases-list">
+                <a href="asthma.html">Asthma</a>
+                <a href="Anemia.html">Anemia</a>
+            </div>
+
+            <div class="alphabet">B</div>
+            <div class="diseases-list">
+                <a href="Bronchitis.html" >Bronchitis</a>
+                <a href="Back_pain.html">Back Pain</a>
+            </div>
+
+            <div class="alphabet">C</div>
+            <div class="diseases-list">
+                <a href="cancer.html">Cancer</a>
+                <a href="Common_cold.html">Common Cold</a>
+            </div>
+
+            <!-- Add additional letters and herbs as needed -->
+        </div>
+    </div>
+
+    <div class="footer">
+        <p>Email: contact@wellherb.com</p>
+        <p class="quote">Healthier tomorrow starts today.</p>
+        <p>Contact Us: +91-9876543210</p>
+    </div>
+
+    <script>
+        const navbar = document.getElementById('navbar');
+        const menuToggle = document.querySelector('.menu-toggle');
+
+        function toggleMenu() {
+            navbar.classList.toggle('open');
+        }
+
+        window.addEventListener('click', function (e) {
+            if (!navbar.contains(e.target) && !menuToggle.contains(e.target)) {
+                navbar.classList.remove('open');
+            }
+        });
+
+        function goToHome() {
+            window.location.reload();
+        }
+    </script>
+</body>
+</html>

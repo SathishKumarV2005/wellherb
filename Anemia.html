@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anemia- Health Information</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f0f4f8;
+            color: #2d3748;
+            line-height: 1.6;
+        }
+
+        .header {
+            background-color: #2f855a;
+            color: white;
+            padding: 1rem;
+            position: relative;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .back-button {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: #ffffff33;
+            border: none;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .back-button:hover {
+            background-color: #ffffff55;
+        }
+
+        .date-display {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 0.9rem;
+        }
+
+        .title {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        .main-content {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 20px;
+        }
+
+        .container {
+            background-color: white;
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .description {
+            text-align: justify;
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            color: #2f855a;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            border-bottom: 2px solid #2f855a;
+            padding-bottom: 0.5rem;
+        }
+
+        ul {
+            list-style-position: inside;
+            padding-left: 1rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #2f855a;
+            font-weight: bold;
+        }
+
+        .symptoms-container {
+            background-color: #f0fff4;
+        }
+
+        .herbs-container {
+            background-color: #e6ffed;
+        }
+
+        .alert-box {
+            background-color: #fff5f5;
+            border-left: 4px solid #e53e3e;
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0 5px 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <button class="back-button" onclick="history.back()">← Back</button>
+        <h1 class="title">Anemia</h1>
+        <div class="date-display">
+            <script>
+                const date = new Date();
+                const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+                document.write(date.toLocaleDateString('en-US', options));
+            </script>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <div class="description">
+                Anemia is a condition that has been recognized for thousands of years, with early records found in ancient Egyptian and Greek medical texts. The term "anemia" is derived from the Greek word an-aimia, meaning "lack of blood." Ancient physicians observed symptoms like fatigue and paleness, often linking them to blood loss or poor nutrition. Over time, medical advancements identified various causes of anemia, including iron deficiency, vitamin deficiencies, chronic diseases, and genetic disorders.This condition can affect people of all ages, but some groups are more vulnerable. Infants and young children are at high risk due to rapid growth and inadequate iron intake. Teenagers, especially girls, are prone to anemia because of menstrual blood loss and increased nutritional needs during puberty. Pregnant women often experience anemia due to the body's increased demand for iron and folic acid to support fetal development. The elderly are also susceptible, as chronic illnesses, poor nutrition, or a decline in bone marrow function can contribute to low red blood cell production. Individuals with chronic diseases such as kidney disease, cancer, and autoimmune disorders often develop anemia due to impaired red blood cell formation. Vegetarians and vegans may also be at risk if their diet lacks sufficient iron-rich foods or vitamin B12 sources.
+               
+            </div>
+        </div>
+
+        <div class="container symptoms-container">
+            <h2 class="section-title">Symptoms</h2>
+            <ul style="list-style-type: none;">
+                <li><b>Fatigue and Weakness</b></li>
+                <li><b>Pale or Yellowish Skin</b></li>
+                <li><b>Shortness of Breath</b></li>
+                <li><b>Dizziness or Lightheadedness</b></li>
+                <li><b>Cold Hands and Feet</b></li>
+                <li><b>Irregular Heartbeat (Palpitations)</b></li>
+                <li><b>Headaches and Difficulty Concentrating</b></li>
+                <li><b>Brittle Nails and Hair Loss</b></li>
+            </ul>
+            
+        </div>
+
+        <div class="container herbs-container">
+            <h2 class="section-title">Herbs that Cure Anemia</h2>
+            <ul style="list-style-type: none;">
+                <li><b>Moringa (Moringa oleifera):</b> Rich in iron, folic acid, and vitamin C, improving red blood cell production.</li>
+                <li><b>Nettle (Urtica dioica):</b> High in iron and vitamin C, enhancing iron absorption.</li>
+                <li><b>Dandelion (Taraxacum officinale):</b> Supports liver function and increases iron absorption.</li>
+                <li><b>Beetroot (Beta vulgaris):</b> Boosts hemoglobin levels and improves blood circulation.</li>
+                <li><b>Spirulina (Arthrospira platensis):</b> A nutrient-dense algae rich in iron and essential vitamins.</li>
+            </ul>
+            
+            <div class="alert-box">
+                <strong>Important Note:</strong> While these herbs may help manage asthma symptoms, they should not replace prescribed medications. Always consult with a healthcare provider before starting any herbal treatment.
+            </div>
+        </div>
+    </main>
+</body>
+</html>

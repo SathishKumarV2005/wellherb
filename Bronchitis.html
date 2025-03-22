@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bronchitis- Health Information</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f0f4f8;
+            color: #2d3748;
+            line-height: 1.6;
+        }
+
+        .header {
+            background-color: #2f855a;
+            color: white;
+            padding: 1rem;
+            position: relative;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .back-button {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: #ffffff33;
+            border: none;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .back-button:hover {
+            background-color: #ffffff55;
+        }
+
+        .date-display {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 0.9rem;
+        }
+
+        .title {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        .main-content {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 20px;
+        }
+
+        .container {
+            background-color: white;
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .description {
+            text-align: justify;
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            color: #2f855a;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            border-bottom: 2px solid #2f855a;
+            padding-bottom: 0.5rem;
+        }
+
+        ul {
+            list-style-position: inside;
+            padding-left: 1rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #2f855a;
+            font-weight: bold;
+        }
+
+        .symptoms-container {
+            background-color: #f0fff4;
+        }
+
+        .herbs-container {
+            background-color: #e6ffed;
+        }
+
+        .alert-box {
+            background-color: #fff5f5;
+            border-left: 4px solid #e53e3e;
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0 5px 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <button class="back-button" onclick="history.back()">← Back</button>
+        <h1 class="title">Bronchitis</h1>
+        <div class="date-display">
+            <script>
+                const date = new Date();
+                const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+                document.write(date.toLocaleDateString('en-US', options));
+            </script>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <div class="description">
+                Bronchitis is an inflammatory condition of the bronchial tubes, which carry air to and from the lungs. The disease has been recognized since ancient times, with early descriptions found in Greek and Roman medical texts. The term "bronchitis" originates from the Greek words bronchos (windpipe) and -itis (inflammation). Historical records show that it was often associated with cold weather, smoke inhalation, and respiratory infections. Over time, medical advancements identified its causes, including viral infections, bacteria, smoking, and air pollution.Bronchitis can affect people of all ages, but some groups are more vulnerable. Infants and young children are at higher risk due to their developing immune systems. Elderly individuals are also susceptible, especially those with chronic respiratory diseases like asthma or chronic obstructive pulmonary disease (COPD). Smokers and individuals exposed to industrial pollutants or secondhand smoke have a higher likelihood of developing chronic bronchitis. People with weakened immune systems, such as those with chronic illnesses or autoimmune diseases, are also more prone to infections that lead to bronchitis.Bronchitis occurs when the lining of the bronchial tubes becomes inflamed, leading to excess mucus production and coughing. The most common cause is viral infections, including influenza, rhinoviruses, and respiratory syncytial virus (RSV). Bacterial infections, though less common, can also trigger bronchitis. 
+        
+            </div>
+        </div>
+
+        <div class="container symptoms-container">
+            <h2 class="section-title">Symptoms</h2>
+            <ul style="list-style-type: none;">
+                <li><b>Persistent cough:</b> Produces mucus, which may be clear, white, yellow, or green.</li>
+                <li><b>Shortness of breath:</b> Especially after coughing episodes.</li>
+                <li><b>Chest discomfort or tightness.</b></li>
+                <li><b>Wheezing:</b> A whistling sound when breathing.</li>
+                <li><b>Fatigue:</b> Due to prolonged coughing and breathing difficulties.</li>
+                <li><b>Sore throat and hoarseness:</b> Especially in viral bronchitis.</li>
+                <li><b>Fever and chills:</b> In cases caused by infections.</li>
+            </ul>
+              
+           
+        </div>
+
+        <div class="container herbs-container">
+            <h2 class="section-title">Herbs that Cure Bronchitis</h2>
+            <ul style="list-style-type: none;">
+                <li><b>Ginger (Zingiber officinale):</b> Reduces inflammation, clears mucus, and soothes the respiratory tract.</li>
+                <li><b>Thyme (Thymus vulgaris):</b> Acts as a natural expectorant, helping to loosen mucus and improve breathing.</li>
+                <li><b>Licorice Root (Glycyrrhiza glabra):</b> Soothes the throat, reduces coughing, and relieves airway inflammation.</li>
+                <li><b>Peppermint (Mentha piperita):</b> Contains menthol, which relaxes the airways and eases congestion.</li>
+                <li><b>Eucalyptus (Eucalyptus globulus):</b> Clears mucus buildup and improves lung function when inhaled as steam.</li>
+            </ul>
+              
+            
+            <div class="alert-box">
+                <strong>Important Note:</strong> While these herbs may help manage asthma symptoms, they should not replace prescribed medications. Always consult with a healthcare provider before starting any herbal treatment.
+            </div>
+        </div>
+    </main>
+</body>
+</html>

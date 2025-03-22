@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cancer- Health Information</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f0f4f8;
+            color: #2d3748;
+            line-height: 1.6;
+        }
+
+        .header {
+            background-color: #2f855a;
+            color: white;
+            padding: 1rem;
+            position: relative;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .back-button {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: #ffffff33;
+            border: none;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .back-button:hover {
+            background-color: #ffffff55;
+        }
+
+        .date-display {
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 0.9rem;
+        }
+
+        .title {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        .main-content {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 20px;
+        }
+
+        .container {
+            background-color: white;
+            border-radius: 10px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .description {
+            text-align: justify;
+            margin-bottom: 1rem;
+        }
+
+        .section-title {
+            color: #2f855a;
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            border-bottom: 2px solid #2f855a;
+            padding-bottom: 0.5rem;
+        }
+
+        ul {
+            list-style-position: inside;
+            padding-left: 1rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        li::before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #2f855a;
+            font-weight: bold;
+        }
+
+        .symptoms-container {
+            background-color: #f0fff4;
+        }
+
+        .herbs-container {
+            background-color: #e6ffed;
+        }
+
+        .alert-box {
+            background-color: #fff5f5;
+            border-left: 4px solid #e53e3e;
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0 5px 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <button class="back-button" onclick="history.back()">← Back</button>
+        <h1 class="title">Cancer</h1>
+        <div class="date-display">
+            <script>
+                const date = new Date();
+                const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+                document.write(date.toLocaleDateString('en-US', options));
+            </script>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <div class="description">
+                Cancer can affect people of all ages, but the risk increases with age. Children may develop cancers such as leukemia, brain tumors, and neuroblastoma due to genetic factors. Young adults are more likely to experience testicular, thyroid, or skin cancers. Middle-aged individuals are at higher risk of breast, lung, colon, and prostate cancer due to lifestyle and environmental factors. Elderly individuals are more prone to cancers caused by long-term exposure to carcinogens, genetic mutations, and a weakened immune system. Cancer can also occur in people with a family history of the disease or those exposed to high-risk factors like smoking, radiation, and poor diet.
+Cancer is caused by the uncontrolled growth of abnormal cells that invade surrounding tissues. Genetic mutations, whether inherited or acquired, play a significant role in cancer development. Environmental carcinogens such as tobacco smoke, radiation, pollution, and toxic chemicals increase cancer risk. Unhealthy lifestyles, including poor diet, lack of exercise, obesity, and excessive alcohol consumption, contribute to various types of cancer. Chronic infections, such as human papillomavirus (HPV), hepatitis B and C, and Helicobacter pylori, can lead to cervical, liver, and stomach cancers. Weakened immune systems, whether due to disease or medical treatments, may increase susceptibility to cancer. Prolonged exposure to ultraviolet (UV) radiation from the sun can lead to skin cancer. Hormonal imbalances and prolonged use of hormone therapy can also contribute to certain cancers like breast and prostate cancer.
+
+            </div>
+        </div>
+
+        <div class="container symptoms-container">
+            <h2 class="section-title">Symptoms</h2>
+            <ol style="list-style-type: none;">
+                <li>Unexplained weight loss or loss of appetite.</li>
+                <li>Persistent fatigue and weakness.</li>
+                <li>Unusual lumps or swelling in any part of the body.</li>
+                <li>Chronic pain, especially in bones or affected organs.</li>
+                <li>Changes in skin, such as darkening, yellowing, or new moles.</li>
+                <li>Persistent cough or difficulty swallowing.</li>
+                <li>Unusual bleeding or bruising without injury.</li>
+                <li>Digestive issues like prolonged constipation or diarrhea.</li>
+                <li>Recurring infections due to a weakened immune system.</li>
+              </ol>
+            
+            
+            
+        </div>
+
+        <div class="container herbs-container">
+            <h2 class="section-title">Herbs that Cure Cancer</h2>
+            <ol style="list-style-type: none;">
+                <li>Turmeric (Curcuma longa) – Contains curcumin, which has anti-inflammatory and anti-cancer properties.</li>
+                <li>Green Tea (Camellia sinensis) – Rich in antioxidants that help slow cancer cell growth.</li>
+                <li>Garlic (Allium sativum) – Boosts the immune system and reduces tumor formation.</li>
+                <li>Ginger (Zingiber officinale) – Contains compounds that may help prevent the spread of cancer cells.</li>
+                <li>Ashwagandha (Withania somnifera) – Supports immune function and reduces tumor growth.</li>
+              </ol>
+            
+
+            <div class="alert-box">
+                <strong>Important Note:</strong> While these herbs may help manage asthma symptoms, they should not replace prescribed medications. Always consult with a healthcare provider before starting any herbal treatment.
+            </div>
+        </div>
+    </main>
+</body>
+</html>

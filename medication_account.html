@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Medication Account Creation</title>
+    <style>
+        /* Your CSS remains unchanged */
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('background.webp');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: rgba(255, 255, 255, 0.8);
+            overflow: hidden;
+        }
+
+        .main-container {
+            position: relative;
+            width: 400px;
+            margin: auto;
+            top: 10%;
+            text-align: center;
+            background-color: azure;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            border: 2px solid transparent;
+            transition: border-color 1s ease;
+        }
+
+        .main-container:hover {
+            border-color: rgb(3, 70, 3);
+        }
+
+        .header {
+            margin-bottom: 20px;
+        }
+
+        .header h1 {
+            font-size: 28px;
+            color: green;
+            text-align: center;
+        }
+
+        .step {
+            display: none;
+            text-align: center;
+            width: 100%;
+        }
+
+        .step.active {
+            display: block;
+        }
+
+        .form-group {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+        .form-group label {
+            width: 30%;
+            font-size: 16px;
+            font-weight: bold;
+            color: #333;
+            text-align: left;
+        }
+
+        .form-group input, .form-group select, .form-group textarea {
+            width: 70%;
+            padding: 10px;
+            border: 1px solid green;
+            border-radius: 15px;
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        .form-group textarea {
+            resize: none;
+        }
+
+        .profile-photo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background-color: lightgray;
+            background-image: url('camera.webp'); /* Replace with your image URL */
+            background-size: 50%;
+            background-repeat: no-repeat;
+            background-position: center;
+            margin: 10px auto;
+            border: 2px solid green;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .profile-photo img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .profile-photo input {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            cursor: pointer;
+        }
+
+        .button-group {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .button-group button {
+            background-color: rgb(4, 170, 98);
+            padding: 10px 20px;
+            height: 50px;
+            width: 100px;
+            border-radius: 30px;
+            border: none;
+            color: azure;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 10px;
+            transition: background-color 0.5s ease, color 0.5s ease;
+        }
+
+        .button-group button:hover {
+            background-color: azure;
+            color: green;
+            border: 2px solid green;
+        }
+
+        .cancel-button {
+            background-color: red;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 30px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 10px;
+            transition: background-color 0.5s ease;
+        }
+
+        .cancel-button:hover {
+            background-color: darkred;
+        }
+
+        .message {
+            text-align: center;
+            font-size: 18px;
+            color: red;
+            margin-top: 10px;
+        }
+
+        .search-box {
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .search-box input {
+            width: 70%;
+            padding: 10px;
+            border: 1px solid green;
+            border-radius: 15px;
+            font-size: 16px;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <div class="header">
+            <h1>Create Medication Account</h1>
+        </div>
+
+        <!-- Step 1: Is the account for you? -->
+        <div class="step active" id="step1">
+            <div class="questions">
+                <label>Is this account for you?</label>
+                <div class="button-group">
+                    <button onclick="selectAccountType(true)">Yes</button>
+                    <button onclick="selectAccountType(false)">No</button>
+                </div>
+                <button class="cancel-button" onclick="cancelAction()">Cancel</button>
+            </div>
+        </div>
+
+        <!-- Step 2: Enter details -->
+        <div class="step" id="step2">
+            <div class="form-group">
+                <div class="profile-photo" id="profilePhoto">
+                    <input type="file" accept="image/*" onchange="previewPhoto(event)">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" placeholder="Enter name">
+            </div>
+            <div class="form-group">
+                <label for="age">Age</label>
+                <input type="number" id="age" placeholder="Enter age">
+            </div>
+            <div class="form-group">
+                <label for="gender">Gender</label>
+                <select id="gender">
+                    <option value="" disabled selected>Select Gender</option>
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="country">Country</label>
+                <input type="text" id="country" placeholder="Enter country">
+            </div>
+            <div class="button-group">
+                <button onclick="prevStep()">Back</button>
+                <button onclick="validateStep2()">Next</button>
+            </div>
+            <div id="step2Message" class="message hidden">Please fill out all fields!</div>
+        </div>
+
+        <!-- Step 3: Long-term health issues -->
+        <div class="step" id="step3">
+            <div class="questions">
+                <label id="step3Question">Do you have any long-term health issues?</label>
+                <div class="button-group">
+                    <button onclick="showHealthIssues(true)">Yes</button>
+                    <button onclick="showHealthIssues(false)">No</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Step 4: Select health issues -->
+        <div class="step" id="step4">
+            <div class="search-box">
+                <input type="text" id="searchIssues" placeholder="Search health issues" onkeyup="filterHealthIssues()">
+            </div>
+            <div class="form-group">
+                <label>Select your health issues</label>
+                <select id="selectedIssues" multiple>
+                    <option>Diabetes</option>
+                    <option>High Blood Pressure</option>
+                    <option>Arthritis</option>
+                    <option>Asthma</option>
+                    <option>Heart Disease</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Other issues (if any)</label>
+                <textarea id="otherIssues" placeholder="Enter other health issues"></textarea>
+            </div>
+            <div class="button-group">
+                <button onclick="prevStep()">Back</button>
+                <button onclick="validateStep4()">Submit</button>
+            </div>
+            <div id="step4Message" class="message hidden">Please select or enter health issues!</div>
+            <div class="message">
+                Don't worry, we will provide precautions for herb intake as per your health.
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currentStep = 1;
+        let isForSelf = false; // Track whether account is for self
+        let memberName = ""; // Track member name if account is for others
+
+        function selectAccountType(isSelf) {
+            isForSelf = isSelf;
+            nextStep();
+        }
+
+        function nextStep() {
+            const currentElement = document.getElementById(`step${currentStep}`);
+            currentElement.classList.remove('active');
+            currentStep++;
+
+            if (currentStep === 3 && !isForSelf) {
+                // Customize Step 3 question for others
+                memberName = document.getElementById('name').value;
+                document.getElementById('step3Question').textContent = `Does ${memberName} have any long-term health issues?`;
+            }
+
+            document.getElementById(`step${currentStep}`).classList.add('active');
+        }
+
+        function prevStep() {
+            const currentElement = document.getElementById(`step${currentStep}`);
+            currentElement.classList.remove('active');
+            currentStep--;
+            document.getElementById(`step${currentStep}`).classList.add('active');
+        }
+
+        function validateStep2() {
+            const name = document.getElementById('name').value.trim();
+            const age = document.getElementById('age').value.trim();
+            const gender = document.getElementById('gender').value;
+            const country = document.getElementById('country').value.trim();
+
+            if (!name || !age || !gender || !country) {
+                document.getElementById('step2Message').classList.remove('hidden');
+            } else {
+                document.getElementById('step2Message').classList.add('hidden');
+                nextStep();
+            }
+        }
+
+        function showHealthIssues(hasIssues) {
+            if (hasIssues) {
+                nextStep();
+            } else {
+                // If no health issues, redirect to home page
+                window.location.href = 'home.html';
+            }
+        }
+
+        function filterHealthIssues() {
+            const search = document.getElementById('searchIssues').value.toLowerCase();
+            const options = document.querySelectorAll('#selectedIssues option');
+            options.forEach(option => {
+                option.style.display = option.textContent.toLowerCase().includes(search) ? '' : 'none';
+            });
+        }
+
+        function validateStep4() {
+            const selectedIssues = document.getElementById('selectedIssues').options.length;
+            if (selectedIssues === 0) {
+                document.getElementById('step4Message').classList.remove('hidden');
+            } else {
+                document.getElementById('step4Message').classList.add('hidden');
+                submitMedication();
+            }
+        }
+
+        function submitMedication() {
+            // Get all selected health issues
+            const selectedIssues = Array.from(document.getElementById('selectedIssues').options).map(option => option.value);
+            
+            // Here you can handle the submission of data if needed
+            console.log('Submitting medication details:', selectedIssues);
+            
+            // Redirect to home page
+            window.location.href = 'home.html';
+        }
+
+        function cancelAction() {
+            window.location.href = 'accounts_display.html';
+        }
+
+        function previewPhoto(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = e => {
+                    document.getElementById('profilePhoto').style.backgroundImage = `url('${e.target.result}')`;
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+    </script>
+</body>
+</html>

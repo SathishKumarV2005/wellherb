@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Where to Buy - Well Herb</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+        .navbar {
+            background-color: #4CAF50;
+            padding: 15px;
+            display: flex;
+            gap: 10px;
+        }
+        .nav-buttons button {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .stores-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        .store-card {
+            background: #f9f9f9;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+        .store-card:hover {
+            transform: translateY(-5px);
+        }
+        .store-name {
+            color: #4CAF50;
+            font-size: 20px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        .store-address {
+            color: #666;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        .store-phone {
+            color: #888;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+        .store-hours {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+        .store-specialties {
+            display: flex;
+            gap: 5px;
+            flex-wrap: wrap;
+            margin-top: 10px;
+        }
+        .specialty-tag {
+            background: #4CAF50;
+            color: white;
+            padding: 4px 8px;
+            border-radius: 15px;
+            font-size: 12px;
+        }
+        .store-rating {
+            color: #ffd700;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+        h1 {
+            color: #4CAF50;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .herb-name {
+            text-align: center;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        .current-date {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #666;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .store-card {
+            animation: fadeIn 0.5s ease-out forwards;
+            opacity: 0;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-buttons">
+            <button onclick="window.location.href='home.html'">
+                <i class="fas fa-home"></i> Home
+            </button>
+            <button onclick="window.history.back()">
+                <i class="fas fa-arrow-left"></i> Back
+            </button>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1>Where to Buy</h1>
+        <h2 class="herb-name" id="herbName"></h2>
+        <div class="current-date">
+            <p id="currentDate"></p>
+            <p id="currentDay"></p>
+        </div>
+        <div class="stores-grid" id="storesGrid">
+            <!-- Stores will be added dynamically -->
+        </div>
+    </div>
+
+    <script>
+        // Update current date and time
+        function updateDateTime() {
+            const currentDate = new Date();
+            const dateOptions = { year: 'numeric', month: '2-digit', day: '2-digit' };
+            const dayOptions = { weekday: 'long' };
+            
+            document.getElementById('currentDate').textContent = `Date: ${currentDate.toLocaleDateString('en-US', dateOptions)}`;
+            document.getElementById('currentDay').textContent = `Day: ${currentDate.toLocaleDateString('en-US', dayOptions)}`;
+        }
+
+        // Generate star rating HTML
+        function generateStarRating(rating) {
+            const fullStars = Math.floor(rating);
+            const hasHalfStar = rating % 1 >= 0.5;
+            let stars = '';
+            
+            for (let i = 0; i < fullStars; i++) {
+                stars += '⭐';
+            }
+            if (hasHalfStar) {
+                stars += '✭';
+            }
+            
+            return stars;
+        }
+
+        // Update date and time immediately
+        updateDateTime();
+
+        // Fetch current herb data and display store locations
+        fetch('/get_current_herb')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('herbName').textContent = data.name;
+                const storesGrid = document.getElementById('storesGrid');
+                
+                // Clear existing stores
+                storesGrid.innerHTML = '';
+                
+                // Add each store with animation delay
+                data.where_to_buy.forEach((store, index) => {
+                    const card = document.createElement('div');
+                    card.className = 'store-card';
+                    card.style.animationDelay = `${index * 0.1}s`;
+                    
+                    card.innerHTML = `
+                        <div class="store-name">${store.name}</div>
+                        <div class="store-address">${store.address}</div>
+                        <div class="store-phone">${store.phone}</div>
+                        ${store.hours ? `<div class="store-hours">Hours: ${store.hours}</div>` : ''}
+                        ${store.rating ? `<div class="store-rating">${generateStarRating(store.rating)}</div>` : ''}
+                        ${store.specialties ? `
+                            <div class="store-specialties">
+                                ${store.specialties.map(specialty => `
+                                    <span class="specialty-tag">${specialty}</span>
+                                `).join('')}
+                            </div>
+                        ` : ''}
+                    `;
+                    
+                    storesGrid.appendChild(card);
+                });
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                document.getElementById('storesGrid').innerHTML = `
+                    <div class="store-card" style="grid-column: 1/-1; text-align: center; color: red;">
+                        Error loading store locations. Please try again later.
+                    </div>
+                `;
+            });
+    </script>
+</body>
+</html>
